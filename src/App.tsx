@@ -1,19 +1,20 @@
-import { useEffect } from "react";
 import "./App.css";
-import { connect } from "react-redux";
-import { enterPostPage } from "./posts/postsActions";
-import { Dispatch } from "redux";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./layout/layout";
-import { PostPage } from "./posts/postPage";
+import { Dispatch } from "redux";
+import CurrentForecast from "./pages/forecast/currentForecast";
+import { enterForeCast } from "./pages/forecast/forecastActions";
+import { useEffect } from "react";
+import { connect } from "react-redux";
 
 interface MapDispatchInterface {
-  enterPostPage?: () => void;
+  enterForecast: (lat: number, long: number) => void;
 }
 
 const mapDispatchToProps = (dispatch: Dispatch): MapDispatchInterface => {
   return {
-    enterPostPage: () => dispatch(enterPostPage()),
+    enterForecast: (lat: number, long: number) =>
+      dispatch(enterForeCast(lat, long)),
   };
 };
 
@@ -21,17 +22,27 @@ interface Props extends MapDispatchInterface {}
 
 function App(props: Props) {
   useEffect(() => {
-    const { enterPostPage } = props;
-    if (enterPostPage) {
-      enterPostPage();
-    }
+    getCityLocation();
   });
+
+  const getCityLocation = () => {
+    const { enterForecast } = props;
+    if (navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const lat = position.coords.latitude;
+        const long = position.coords.longitude;
+        enterForecast(lat, long);
+      });
+    } else {
+      enterForecast(null, null);
+    }
+  };
 
   const route = (
     <Layout>
       <Routes>
         {/* <Route path="*" element={<NotFound />} /> */}
-        <Route path="/" element={<PostPage />} />
+        <Route path="/" element={<CurrentForecast />} />
       </Routes>
     </Layout>
   );

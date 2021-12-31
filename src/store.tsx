@@ -1,10 +1,10 @@
 import createSagaMiddleware from "@redux-saga/core";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { postReducer } from "./posts/postsReducer";
-import postsSaga from "./posts/postsSaga";
+import { forecastReducer } from "./pages/forecast/forecastReducer";
+import forecastSaga from "./pages/forecast/forecastSaga";
 
 const rootReducer = combineReducers({
-  posts: postReducer,
+  forecast: forecastReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
@@ -16,8 +16,6 @@ export const store = configureStore({
   middleware,
 });
 
-sagaMiddleware.run(postsSaga);
-// Infer the `RootState` and `AppDispatch` types from the store itself
+sagaMiddleware.run(forecastSaga);
 export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;
