@@ -54,7 +54,7 @@ function App(props: Props) {
         )}
         <Route path="/city/:cityKey" element={<CurrentForecast />} />
         <Route path="/city" element={<CurrentForecast />} />
-        <Route path="/" element={<Navigate replace to="/city" />} />
+        <Route path="*" element={<Navigate replace to="/city" />} />
       </Routes>
     </Layout>
   );
