@@ -1,5 +1,5 @@
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast, TypeOptions } from "react-toastify";
 import {
   currentForecastUrl,
   futureForecastUrl,
@@ -11,14 +11,15 @@ import {
   CityGeoDetails,
 } from "./interfaces";
 
-export const handleFetchError = (
+export const handleAsyncToast = (
   toastId: React.ReactText,
   errorMsg: string,
-  errorId: string
+  errorId: string,
+  type: TypeOptions
 ) => {
   toast.update(toastId, {
     render: errorMsg,
-    type: "error",
+    type,
     isLoading: false,
     toastId: errorId,
     position: toast.POSITION.TOP_CENTER,
@@ -59,6 +60,7 @@ export const getCityDataByGeoLocation = async (lat: number, long: number) => {
       currentForecastUrl(cityGeoForecast.Key)
     );
     const cityForecast = cityForecastRes.data[0] as CityCurrentForecast;
+    handleAsyncToast(toastId, "successfully fetched data!", "geo", "success");
     return convertServerDataToReducerData(
       cityForecast,
       cityFutureData,
@@ -66,7 +68,7 @@ export const getCityDataByGeoLocation = async (lat: number, long: number) => {
       cityGeoForecast.Key
     );
   } catch (err) {
-    handleFetchError(toastId, "Error fetching by geo location", "geo");
+    handleAsyncToast(toastId, "Error fetching by geo location", "geo", "error");
     console.log(err);
   }
 };
@@ -83,6 +85,7 @@ export const getCityDataByKey = async (
     const cityForecast = cityForecastRes.data[0] as CityCurrentForecast;
     const cityFutureDataRes = await axios.get(futureForecastUrl(key));
     const cityFutureData: CityFutureForecast = cityFutureDataRes.data;
+    handleAsyncToast(toastId, "successfully fetched data!", "geo", "success");
     return convertServerDataToReducerData(
       cityForecast,
       cityFutureData,
@@ -90,7 +93,7 @@ export const getCityDataByKey = async (
       key
     );
   } catch (err) {
-    handleFetchError(toastId, "Error fetching by key", "key");
+    handleAsyncToast(toastId, "Error fetching by key", "key", "error");
     console.log(err);
   }
 };
