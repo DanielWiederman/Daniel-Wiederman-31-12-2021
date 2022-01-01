@@ -33,7 +33,7 @@ const Input = styled.input`
   height: 95%;
   margin: auto;
   border-radius: 1.04vw;
-  font-size: 3.5vw;
+  font-size: 7.5vw;
   background: papayawhip;
   box-sizing: border-box;
   ${md} {
@@ -55,7 +55,7 @@ const I = styled.i`
   width: 5vw;
   margin: auto;
   height: 100%;
-  font-size: 3.8vw;
+  font-size: 3.8vh;
   height: 3.8vh;
   ${md} {
     width: 25px;
