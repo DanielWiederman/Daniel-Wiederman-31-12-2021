@@ -12,11 +12,11 @@ interface FutureForecastBoxProps {
 }
 
 const FutureForecastContainer = styled.div`
-  width: 40vh;
+  width: 40vw;
   height: 40vh;
-  border: 0.5vh solid black;
+  border: 0.5vw solid black;
   box-sizing: border-box;
-  border-radius: 1vh;
+  border-radius: 1vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -24,19 +24,19 @@ const FutureForecastContainer = styled.div`
   box-sizing: border-box;
   margin: 1.5vh 0vh;
   & .future-forecast-date {
-    padding-bottom: 2.5vh;
-    font-size: 6.5vh;
+    padding-bottom: 2.5vw;
+    font-size: 6.5vw;
   }
   & .future-forecast-icon {
     padding-bottom: 2.5vh;
     i {
       width: 100%;
       height: 10vh;
-      font-size: 15vh;
+      font-size: 15vw;
     }
   }
   & .future-forecast-temp {
-    font-size: 5vh;
+    font-size: 5vw;
   }
   ${md} {
     width: 165px;

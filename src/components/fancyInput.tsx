@@ -7,9 +7,9 @@ const FancyInputContainer = styled.div`
   display: flex;
   align-items: center;
   background: papayawhip;
-  width: 90vh;
+  width: 90vw;
   flex: 0;
-  border-radius: 1.04vh;
+  border-radius: 1.04vw;
   height: 10vh;
   box-sizing: border-box;
   ${md} {
@@ -25,15 +25,15 @@ const FancyInputContainer = styled.div`
 `;
 
 const Input = styled.input`
-  padding: 0px 1.1vh;
+  padding: 0px 1.1vw;
   border: none;
   position: relative;
   outline: none;
-  width: 80vh;
+  width: 60vw;
   height: 95%;
   margin: auto;
-  border-radius: 1.04vh;
-  font-size: 3.5vh;
+  border-radius: 1.04vw;
+  font-size: 3.5vw;
   background: papayawhip;
   box-sizing: border-box;
   ${md} {
@@ -52,10 +52,10 @@ const Input = styled.input`
 `;
 
 const I = styled.i`
-  width: 5vh;
+  width: 5vw;
   margin: auto;
   height: 100%;
-  font-size: 3.8vh;
+  font-size: 3.8vw;
   height: 3.8vh;
   ${md} {
     width: 25px;

@@ -34,7 +34,7 @@ const mapDispatchToProps = (dispatch: Dispatch): MapDispatchInterface => {
 interface Props extends MapDispatchInterface {}
 
 const InputContainer = styled.div`
-  width: 100vh;
+  width: 100%;
   display: block;
   padding-top: 4vh;
   ${md} {

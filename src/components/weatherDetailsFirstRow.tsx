@@ -20,25 +20,25 @@ const ForecastNowFavoriteRow = styled.div`
     padding-top: 10vh;
   }
   & .favorite > i {
-    font-size: 15vh;
+    font-size: 15vw;
     color: #dd2424;
   }
   & .current-forecast {
     display: flex;
     align-items: center;
     & .weather-status-icon > i {
-      font-size: 20vh;
-      width: 23vh;
+      font-size: 20vw;
+      width: 23vw;
     }
     & .weather-info {
       display: flex;
       flex-direction: column;
       & .city-name {
-        font-size: 6vh;
+        font-size: 6vw;
         padding-bottom: 5vh;
       }
       & .city-current-temp {
-        font-size: 6vh;
+        font-size: 6vw;
       }
     }
   }

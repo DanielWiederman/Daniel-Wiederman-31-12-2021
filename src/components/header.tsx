@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { lg, md } from "../utils/medias";
 
 const HeaderRow = styled.div`
-  width: 100vh;
+  width: 100%;
   text-align: center;
-  font-size: 6vh;
+  font-size: 6vw;
   color: black;
   font-weight: 500;
   border-bottom: 1px solid black;

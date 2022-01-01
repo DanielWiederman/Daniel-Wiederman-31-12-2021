@@ -12,7 +12,7 @@ const FancySearchResultsInputContainer = styled.div`
   display: flex;
   align-items: center;
   background: papayawhip;
-  width: 90vh;
+  width: 90vw;
   margin: auto;
   justify-content: center;
   position: relative;
@@ -32,7 +32,7 @@ const ItemsContainer = styled.div`
   flex-direction: column;
   background: papayawhip;
   z-index: 10;
-  width: 90vh;
+  width: 90vw;
   overflow-y: auto;
   scrollbar-width: auto;
   scrollbar-color: #54a08d #ffffff;
@@ -77,7 +77,7 @@ const ItemRow = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 2vh 2vh;
+  padding: 2vh 2vw;
   border-bottom: solid 0.2vh black;
   box-sizing: border-box;
   :hover {
@@ -85,14 +85,14 @@ const ItemRow = styled.div`
     cursor: pointer;
   }
   .city-name {
-    font-size: 5vh;
+    font-size: 5vw;
     width: 70%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
   .country-name {
-    font-size: 3.5vh;
+    font-size: 3.5vw;
     text-align: right;
     overflow: hidden;
     white-space: nowrap;

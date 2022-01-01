@@ -22,15 +22,15 @@ interface WeatherDetailsDisplayProps extends MapDispatchInterface {
 }
 
 const WeatherDetailsDisplayContainer = styled.div`
-  width: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 8vh;
-  padding: 0vh 5vh;
+  padding: 0vh 5vw;
   box-sizing: border-box;
 
   .forecast-now-text-row {
-    font-size: 10vh;
+    font-size: 10vw;
     text-align: center;
     padding: 10vh 0vh;
   }
