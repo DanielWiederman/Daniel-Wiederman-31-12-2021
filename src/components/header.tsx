@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { lg } from "../utils/medias";
+import { lg, md } from "../utils/medias";
 
 const HeaderRow = styled.div`
   width: 100vh;
@@ -23,7 +23,7 @@ const HeaderRow = styled.div`
     justify-content: space-around;
   }
 
-  ${lg} {
+  ${md} {
     width: 100%;
     text-align: center;
     font-size: 25px;

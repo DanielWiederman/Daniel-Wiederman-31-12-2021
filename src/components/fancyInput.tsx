@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { lg } from "../utils/medias";
+import { lg, md } from "../utils/medias";
 import Spinner from "./fancySpinner";
 
 const FancyInputContainer = styled.div`
@@ -12,7 +12,7 @@ const FancyInputContainer = styled.div`
   border-radius: 1.04vh;
   height: 10vh;
   box-sizing: border-box;
-  ${lg} {
+  ${md} {
     display: flex;
     align-items: center;
     background: papayawhip;
@@ -36,7 +36,7 @@ const Input = styled.input`
   font-size: 3.5vh;
   background: papayawhip;
   box-sizing: border-box;
-  ${lg} {
+  ${md} {
     padding: 0px 10px;
     border: none;
     position: relative;
@@ -57,7 +57,7 @@ const I = styled.i`
   height: 100%;
   font-size: 3.8vh;
   height: 3.8vh;
-  ${lg} {
+  ${md} {
     width: 25px;
     margin: auto;
     height: 100%;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { translateWeatherCodeToIcon } from "../utils/functionalUtils";
 import { CityCurrentForecast } from "../utils/interfaces";
-import { lg } from "../utils/medias";
+import { lg, md } from "../utils/medias";
 import { FancyIcon } from "./fancyIcon";
 
 interface WeatherDetailsFirstRowProps {
@@ -42,7 +42,7 @@ const ForecastNowFavoriteRow = styled.div`
       }
     }
   }
-  ${lg} {
+  ${md} {
     display: flex;
     justify-content: space-between;
     align-items: center;

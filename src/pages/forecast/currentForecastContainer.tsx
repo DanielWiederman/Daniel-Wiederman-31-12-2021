@@ -14,7 +14,7 @@ import {
   useOutsideClick,
 } from "../../utils/functionalUtils";
 import { SearchQueryResponse } from "../../utils/interfaces";
-import { lg } from "../../utils/medias";
+import { lg, md } from "../../utils/medias";
 import { changeSelectedCity, setForecastCity } from "./store/forecastActions";
 import WeatherDetailsDisplay from "./weatherDetailsDisplay";
 
@@ -37,7 +37,7 @@ const InputContainer = styled.div`
   width: 100vh;
   display: block;
   padding-top: 4vh;
-  ${lg} {
+  ${md} {
     width: 100%;
     display: flex;
     justify-content: center;

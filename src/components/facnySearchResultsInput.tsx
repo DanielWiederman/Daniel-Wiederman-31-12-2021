@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SearchQueryResponse } from "../utils/interfaces";
-import { lg } from "../utils/medias";
+import { lg, md } from "../utils/medias";
 import { FancyInput, FancyInputProps } from "./fancyInput";
 
 interface FancySearchResultsInputProps extends FancyInputProps {
@@ -16,7 +16,7 @@ const FancySearchResultsInputContainer = styled.div`
   margin: auto;
   justify-content: center;
   position: relative;
-  ${lg} {
+  ${md} {
     display: flex;
     align-items: center;
     background: papayawhip;
@@ -40,7 +40,7 @@ const ItemsContainer = styled.div`
   border-bottom: 2px solid black;
   box-sizing: border-box;
   max-height: 60vh;
-  ${lg} {
+  ${md} {
     position: absolute;
     top: 100%;
     display: flex;
@@ -101,7 +101,7 @@ const ItemRow = styled.div`
   &:last-child {
     border-bottom: unset;
   }
-  ${lg} {
+  ${md} {
     width: 100%;
     display: flex;
     align-items: flex-end;

@@ -4,7 +4,7 @@ import {
   translateWeatherCodeToIcon,
 } from "../utils/functionalUtils";
 import { DailyForecast } from "../utils/interfaces";
-import { lg } from "../utils/medias";
+import { lg, md } from "../utils/medias";
 import { FancyIcon } from "./fancyIcon";
 
 interface FutureForecastBoxProps {
@@ -38,7 +38,7 @@ const FutureForecastContainer = styled.div`
   & .future-forecast-temp {
     font-size: 5vh;
   }
-  ${lg} {
+  ${md} {
     width: 165px;
     height: 165px;
     border: 1.5px solid black;

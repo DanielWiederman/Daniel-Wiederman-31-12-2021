@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { FutureForecastBox } from "../../components/futureForecastBox";
 import { WeatherDetailsFirstRow } from "../../components/weatherDetailsFirstRow";
 import { RootState } from "../../store";
-import { lg } from "../../utils/medias";
+import { lg, md } from "../../utils/medias";
 import { toggleFavorite } from "./store/forecastActions";
 
 interface MapDispatchInterface {
@@ -40,7 +40,7 @@ const WeatherDetailsDisplayContainer = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  ${lg} {
+  ${md} {
     width: 1000px;
     height: 800px;
     border: 5px solid black;
