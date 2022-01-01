@@ -9,6 +9,22 @@ export const useDebouncedEffect = (effect: any, deps: any, delay: number) => {
   }, [...(deps || []), delay]);
 };
 
+export const useOutsideClick = (ref: any, callback: any) => {
+  const handleClick = (e: any) => {
+    if (ref.current && !ref.current.contains(e.target)) {
+      callback();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  });
+};
+
 export const translateWeatherCodeToIcon = (weatherCode: number) => {
   if (weatherCode > 0 && weatherCode < 8) {
     return "sun";
@@ -32,3 +48,8 @@ export const translateWeatherCodeToIcon = (weatherCode: number) => {
     return "sun";
   }
 };
+
+export const celsiusToFahrenheit = (celsius: number) => (celsius * 9) / 5 + 32;
+
+export const fahrenheitToCelsius = (fahrenheit: number) =>
+  ((fahrenheit - 32) * 5) / 9;

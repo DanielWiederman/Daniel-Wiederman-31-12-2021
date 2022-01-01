@@ -1,11 +1,13 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./layout/layout";
 import { Dispatch } from "redux";
-import CurrentForecast from "./pages/forecast/currentForecast";
-import { enterForeCast } from "./pages/forecast/forecastActions";
-import { useEffect } from "react";
+import CurrentForecast from "./pages/forecast/currentForecastContainer";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { enterForeCast } from "./pages/forecast/store/forecastActions";
+import FavoritesPageContainer from "./pages/favorites/favoritesPageContainer";
+import { useMedia } from "./utils/medias";
 
 interface MapDispatchInterface {
   enterForecast: (lat: number, long: number) => void;
@@ -21,6 +23,8 @@ const mapDispatchToProps = (dispatch: Dispatch): MapDispatchInterface => {
 interface Props extends MapDispatchInterface {}
 
 function App(props: Props) {
+  const [loading, setLoading] = useState<boolean>(true);
+
   useEffect(() => {
     getCityLocation();
   });
@@ -36,13 +40,21 @@ function App(props: Props) {
     } else {
       enterForecast(null, null);
     }
+    setLoading(false);
   };
+
+  useMedia();
 
   const route = (
     <Layout>
       <Routes>
         {/* <Route path="*" element={<NotFound />} /> */}
-        <Route path="/" element={<CurrentForecast />} />
+        {!loading && (
+          <Route path="/favorites" element={<FavoritesPageContainer />} />
+        )}
+        <Route path="/city/:cityKey" element={<CurrentForecast />} />
+        <Route path="/city" element={<CurrentForecast />} />
+        <Route path="/" element={<Navigate replace to="/city" />} />
       </Routes>
     </Layout>
   );

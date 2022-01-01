@@ -1,43 +1,72 @@
 import React from "react";
 import styled from "styled-components";
+import { lg } from "../utils/medias";
 import Spinner from "./fancySpinner";
 
 const FancyInputContainer = styled.div`
   display: flex;
   align-items: center;
   background: papayawhip;
-  width: 300px;
+  width: 90vh;
   flex: 0;
-  border-radius: 8px;
-  height: 35px;
-  border: 1.5px solid transparent;
-  :focus-within {
-    border: 1.5px solid cyan;
+  border-radius: 1.04vh;
+  height: 10vh;
+  box-sizing: border-box;
+  ${lg} {
+    display: flex;
+    align-items: center;
+    background: papayawhip;
+    width: 300px;
+    flex: 0;
+    border-radius: 8px;
+    height: 35px;
+    box-sizing: border-box;
   }
 `;
 
 const Input = styled.input`
-  box-sizing: border-box;
-  padding: 0px 10px;
+  padding: 0px 1.1vh;
   border: none;
   position: relative;
   outline: none;
-  width: 275px;
+  width: 80vh;
   height: 95%;
   margin: auto;
-  border-radius: 8px;
+  border-radius: 1.04vh;
+  font-size: 3.5vh;
   background: papayawhip;
+  box-sizing: border-box;
+  ${lg} {
+    padding: 0px 10px;
+    border: none;
+    position: relative;
+    outline: none;
+    width: 275px;
+    height: 95%;
+    margin: auto;
+    border-radius: 8px;
+    font-size: 20px;
+    background: papayawhip;
+    box-sizing: border-box;
+  }
 `;
 
 const I = styled.i`
-  width: 25px;
+  width: 5vh;
   margin: auto;
   height: 100%;
-  font-size: 20px;
-  height: 20px;
+  font-size: 3.8vh;
+  height: 3.8vh;
+  ${lg} {
+    width: 25px;
+    margin: auto;
+    height: 100%;
+    font-size: 20px;
+    height: 20px;
+  }
 `;
 
-interface FancyInputProps {
+export interface FancyInputProps {
   value: string;
   onChange: (value: string) => void;
   loading: boolean;

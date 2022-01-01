@@ -1,7 +1,7 @@
 import createSagaMiddleware from "@redux-saga/core";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { forecastReducer } from "./pages/forecast/forecastReducer";
-import forecastSaga from "./pages/forecast/forecastSaga";
+import { forecastReducer } from "./pages/forecast/store/forecastReducer";
+import forecastSaga from "./pages/forecast/store/forecastSaga";
 
 const rootReducer = combineReducers({
   forecast: forecastReducer,
@@ -17,5 +17,6 @@ export const store = configureStore({
 });
 
 sagaMiddleware.run(forecastSaga);
+
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
