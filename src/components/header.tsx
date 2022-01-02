@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { lg, md } from "../utils/medias";
@@ -17,7 +17,6 @@ const HeaderRow = styled.div`
     padding: 2vh 0vh;
   }
   & .route-btns {
-    padding: 2vh 0vh;
     border-top: 1px solid black;
     display: flex;
     justify-content: space-around;
@@ -47,23 +46,65 @@ const HeaderRow = styled.div`
   }
 `;
 
-const LinkBtn = styled.div`
-  padding: 0px 5px;
+interface LinkBtnProps {
+  isSelected: boolean;
+  selected: routes;
+}
+
+const LinkBtn = styled.div<LinkBtnProps>`
+  width: 50%;
+  padding: 2vh;
   a {
     color: unset;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  ${({ isSelected }) =>
+    isSelected &&
+    `
+    background: #3f3f85;
+    color: white;
+     a {
+    color: unset;
+    text-decoration: none;
+  }
+  `}
+  ${md} {
+    width: unset;
+    padding: 10px 5px;
+    ${({ selected }) =>
+      `
+      border-radius: ${
+        selected === "main" ? "15px 0px 0px 15px" : "0px 15px 15px 0px"
+      };
+  `}
   }
 `;
 
+type routes = "main" | "favorites";
+
 const Header = () => {
+  const [selectedRoute, setSelectedRoute] = useState<routes>("main");
   return (
     <HeaderRow>
       <div className="weather-app-title">Weather App</div>
       <div className="route-btns">
-        <LinkBtn>
+        <LinkBtn
+          isSelected={selectedRoute === "main"}
+          selected={selectedRoute}
+          onClick={() => setSelectedRoute("main")}
+        >
           <Link to="/">Main</Link>
         </LinkBtn>
-        <LinkBtn>
+        <LinkBtn
+          isSelected={selectedRoute === "favorites"}
+          selected={selectedRoute}
+          onClick={() => setSelectedRoute("favorites")}
+        >
           <Link to="/favorites">Favorites</Link>
         </LinkBtn>
       </div>

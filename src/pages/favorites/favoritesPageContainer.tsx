@@ -3,6 +3,7 @@ import { Dispatch } from "redux";
 import styled from "styled-components";
 import { FavoritesCitiesBox } from "../../components/favoritesCitiesBox";
 import { RootState } from "../../store";
+import { md } from "../../utils/medias";
 import { toggleFavorite } from "../forecast/store/forecastActions";
 import {
   getFavoritesCitiesKeys,
@@ -22,8 +23,12 @@ const mapDispatchToProps = (dispatch: Dispatch): MapDispatchInterface => {
 interface Props extends MapDispatchInterface {}
 
 const FavoritesCitiesContainer = styled.div`
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
+  ${md} {
+    justify-content: start;
+  }
 `;
 
 const FavoritesPageContainer = (props: Props) => {

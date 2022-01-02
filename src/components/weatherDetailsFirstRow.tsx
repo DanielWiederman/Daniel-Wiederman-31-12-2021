@@ -27,8 +27,9 @@ const ForecastNowFavoriteRow = styled.div`
     display: flex;
     align-items: center;
     & .weather-status-icon > i {
-      font-size: 20vw;
-      width: 23vw;
+      font-size: 30vw;
+      width: 35vw;
+      height: auto;
     }
     & .weather-info {
       display: flex;
