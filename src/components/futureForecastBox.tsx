@@ -4,7 +4,7 @@ import {
   translateWeatherCodeToIcon,
 } from "../utils/functionalUtils";
 import { DailyForecast } from "../utils/interfaces";
-import { lg, md } from "../utils/medias";
+import { md } from "../utils/medias";
 import { FancyIcon } from "./fancyIcon";
 
 interface FutureForecastBoxProps {

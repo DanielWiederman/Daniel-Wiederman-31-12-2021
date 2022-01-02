@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { lg, md } from "../utils/medias";
+import { md } from "../utils/medias";
 import Spinner from "./fancySpinner";
 
 const FancyInputContainer = styled.div`

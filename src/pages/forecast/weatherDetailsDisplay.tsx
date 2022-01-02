@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { FutureForecastBox } from "../../components/futureForecastBox";
 import { WeatherDetailsFirstRow } from "../../components/weatherDetailsFirstRow";
 import { RootState } from "../../store";
-import { lg, md } from "../../utils/medias";
+import { md } from "../../utils/medias";
 import { toggleFavorite } from "./store/forecastActions";
 
 interface MapDispatchInterface {

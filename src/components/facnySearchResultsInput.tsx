@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SearchQueryResponse } from "../utils/interfaces";
-import { lg, md } from "../utils/medias";
+import { md } from "../utils/medias";
 import { FancyInput, FancyInputProps } from "./fancyInput";
 
 interface FancySearchResultsInputProps extends FancyInputProps {

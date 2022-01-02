@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { lg, md } from "../utils/medias";
+import { md } from "../utils/medias";
 
 const HeaderRow = styled.div`
   width: 100%;

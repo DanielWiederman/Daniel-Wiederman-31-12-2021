@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { translateWeatherCodeToIcon } from "../utils/functionalUtils";
 import { CityCurrentForecast } from "../utils/interfaces";
-import { lg, md } from "../utils/medias";
+import { md } from "../utils/medias";
 import { FancyIcon } from "./fancyIcon";
 
 interface WeatherDetailsFirstRowProps {

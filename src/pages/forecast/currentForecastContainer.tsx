@@ -14,7 +14,7 @@ import {
   useOutsideClick,
 } from "../../utils/functionalUtils";
 import { SearchQueryResponse } from "../../utils/interfaces";
-import { lg, md } from "../../utils/medias";
+import { md } from "../../utils/medias";
 import { changeSelectedCity, setForecastCity } from "./store/forecastActions";
 import WeatherDetailsDisplay from "./weatherDetailsDisplay";
 
