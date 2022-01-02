@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Daniel-Wiederman-31-12-2021/static/css/main.8f200400.css",
-    "main.js": "/Daniel-Wiederman-31-12-2021/static/js/main.edb816ce.js",
+    "main.js": "/Daniel-Wiederman-31-12-2021/static/js/main.b3fcc096.js",
     "static/js/787.5b404d1a.chunk.js": "/Daniel-Wiederman-31-12-2021/static/js/787.5b404d1a.chunk.js",
     "index.html": "/Daniel-Wiederman-31-12-2021/index.html",
     "main.8f200400.css.map": "/Daniel-Wiederman-31-12-2021/static/css/main.8f200400.css.map",
-    "main.edb816ce.js.map": "/Daniel-Wiederman-31-12-2021/static/js/main.edb816ce.js.map",
+    "main.b3fcc096.js.map": "/Daniel-Wiederman-31-12-2021/static/js/main.b3fcc096.js.map",
     "787.5b404d1a.chunk.js.map": "/Daniel-Wiederman-31-12-2021/static/js/787.5b404d1a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8f200400.css",
-    "static/js/main.edb816ce.js"
+    "static/js/main.b3fcc096.js"
   ]
 }
